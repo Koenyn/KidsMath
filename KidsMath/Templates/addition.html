@@ -1,0 +1,48 @@
+﻿<h2>Addition</h2>
+
+<div class="row">
+	<div class="col-xs-12">
+		<h3>Add the following</h3>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-5">
+		<h4>{{equation.LeftValue}}</h4>
+	</div>
+	<div class="col-xs-2 text-center">
+		<h4>+</h4>
+	</div>
+	<div class="col-xs-5">
+		<h4>{{equation.RightValue}}</h4>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-5">
+	</div>
+	<div class="col-xs-2 text-center">
+		<h4>=</h4>
+	</div>
+	<div class="col-xs-5">
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-5">
+	</div>
+	<div class="col-xs-2 text-center">
+		<input class="form-control" type="number" ng-disabled="busy" ng-model="equation.guess" />
+	</div>
+	<div class="col-xs-5">
+		<button type="button" ng-click="check();" ng-disabled="busy" class="btn btn-info"><i class="fa fa-check"></i> Check</button>
+	</div>
+</div>
+<div class="row" ng-show="checked">
+	<div class="col-xs-12 bg-success" ng-show="equation.guess == equation.Answer">Correct</div>
+	<div class="col-xs-12 bg-danger" ng-hide="equation.guess == equation.Answer">Wrong. The Correct Answer is {{equation.Answer}}</div>
+</div>
+<div class="row" ng-show="checked">
+	<button type="button" ng-disabled="busy" ng-click="get();" class="btn btn-default"><i class="fa fa-clock-o"></i> Next</button>
+</div>
